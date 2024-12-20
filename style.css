@@ -1,0 +1,568 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Kumbh sans-serif;
+}
+.navbar{
+    background: purple;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+}
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+}
+.logo img {
+    height: 60px;
+    width: auto;
+}
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+.navbar__item{
+    height: 80px;
+}
+.navbar__links{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    color: white;
+}
+.button:hover{
+    background: orange;
+    transition: all 0.3s ease;
+}
+.navbar__links:hover{
+    background: pink;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:960px){
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+    .navbar__menu.active{
+        background: #1313;
+        top: 100%;
+        opacity: 1;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white;
+    }
+   .navbar__item{
+    width: 100%;
+   }
+   .navbar__links{
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+   }
+   #mobile-menu{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%,20%);
+   }
+   .navbar__btn{
+    padding-bottom: 2rem;
+   }
+   .button{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 80%;
+height: 80px;
+margin: 0;
+   }
+.navbar__toggle .bar{
+    display: block;
+    cursor: pointer;
+}
+#mobile-menu.is-active .bar:nth-child(2){
+opacity: 0;
+}
+#mobile-menu.is-active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+   }
+}
+
+/*  Hero section */
+.main{
+    background-color: black;
+
+}
+.main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #1414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+.main__content h1 {
+    font-size: 4rem;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-clip: text; /* Use for the gradient clipping */
+    -webkit-background-clip: text; /* Safari compatibility */
+    color: transparent; /* Ensure the text itself is transparent */
+    text-transform: none; /* Optional: reset text transform if needed */
+    text-align: center; /* Optional: center the text alignment */
+}
+.main__content h2{
+    font-size: 4rem;
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-clip: text; /* Use for the gradient clipping */
+    -webkit-background-clip: text; /* Safari compatibility */
+    color: transparent; /* Ensure the text itself is transparent */
+    text-transform: none; /* Optional: reset text transform if needed */
+    text-align: center; /* Optional: center the text alignment */
+}
+.main__content p{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+.main__btn{
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    outline: none;
+
+}
+.main__btn a{
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+}
+.main__btn:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+.main__btn:hover{
+    color: white;
+}
+.main__btn:hover:after{
+    width: 100%;
+}
+.main__img--container{
+    text-align: center;
+}
+#main__img{
+    height: 80%;
+    width: 80%;
+}
+/* moble responsive */
+@media screen and (max-width:768px){
+.main__container{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+}
+.main__content{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.main__content h1{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+.main__content h2{
+    font-size: 2rem;
+}
+.main__content p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+}
+    @media  screen and (max-width:480px) {
+        main__content h1{
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+        .main__content h2{
+            font-size: 2rem;
+        }
+        .main__content p{
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+        .main__btn{
+            padding: 12px 36px ;
+            margin: 2.5rem 0;
+        }
+    }
+
+/*  porfolio*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Services Section */
+.portfolio{
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio h2 {
+    font-size: 100px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Shoe Grid */
+.shoe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.shoe-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.shoe-item:hover {
+    transform: scale(1.05);
+}
+
+.shoe-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+
+
+
+
+/* contact */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Light cyan background for the whole page */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Container */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for the form container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Header */
+h1 {
+    text-align: center;
+    color:#cf556c;
+}
+
+/* Container */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("BACKK.png");
+    background-size: cover; /* Cover the entire page */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Make the background fixed during scrolling */
+    padding: 20px;
+    color: #333;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: #cf556c;
+    font-size: 4rem;
+}
+
+/* Container */
+/* General Styles */
+
+
+/* Business Container */
+.business-container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header Section */
+header h1 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Business Info Section */
+.business-info {
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-right: 15px;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.info-item p strong {
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .business-container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .info-item i {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+}
+
+  
+  
+/* Social Footer Styles */
+.social-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.social-footer h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons .icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons .icon:hover img {
+    transform: scale(1.2);
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
